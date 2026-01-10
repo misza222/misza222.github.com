@@ -21,7 +21,7 @@ format:
     theme: litera
     css: styles.css
     link-external-newwindow: true
-    link-external-filter: '^(?:http:|https:)\/\/blog\.mpawlowski\.eu\/**'
+    # link-external-filter: '^(?:http:|https:)\/\/blog\.mpawlowski\.eu\/**'
 
 comments: 
   utterances: 

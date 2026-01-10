@@ -2,9 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/new_programming_paradigm.html",
-      "/posts/ak_playlist/index.html",
       "/posts/nerf_basics/index.html",
+      "/posts/dangers_of_batchnorm/index.html",
       "/posts/synthetic_vision_training/index.html",
       "/posts/f_cross_entropy/index.html",
       "/posts/optuna_notes/index.html",

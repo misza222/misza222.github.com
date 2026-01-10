@@ -1,1 +1,7 @@
+.quarto
+.venv
+.envrc
+**/*.quarto_ipynb
+.vscode
+
 /.quarto/
