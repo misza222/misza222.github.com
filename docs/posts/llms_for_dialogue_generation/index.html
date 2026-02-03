@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-06-01">
+<meta name="description" content="using LLMs to support collaborative design ideation">
 
-<title>Technical notes – Michał Pawłowski</title>
+<title>Dialogues for Data Driven Design – Michał Pawłowski</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4679fee98e7370ac6b68367c32ba45a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-4679fee98e7370ac6b68367c32ba45a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,83 +70,25 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Technical notes – Michał Pawłowski">
-<meta property="og:image" content="./posts/nerf_basics/DALL·E 2023-11-22 20.12.00 - A futuristic Nerf gun designed for the Metaverse. The gun is sleek, with neon lights and digital patterns on its body. It features advanced holographi.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Dialogues for Data Driven Design – Michał Pawłowski">
+<meta property="og:description" content="using LLMs to support collaborative design ideation">
 <meta property="og:site_name" content="Michał Pawłowski">
-<meta name="twitter:title" content="Technical notes – Michał Pawłowski">
-<meta name="twitter:image" content="./posts/nerf_basics/DALL·E 2023-11-22 20.12.00 - A futuristic Nerf gun designed for the Metaverse. The gun is sleek, with neon lights and digital patterns on its body. It features advanced holographi.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dialogues for Data Driven Design – Michał Pawłowski">
+<meta name="twitter:description" content="using LLMs to support collaborative design ideation">
+<meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Michał Pawłowski</span>
     </a>
   </div>
@@ -157,7 +99,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
@@ -185,284 +127,50 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Technical notes</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Dialogues for Data Driven Design</h1>
+                  <div>
+        <div class="description">
+          using LLMs to support collaborative design ideation
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">llm, design, collaboration, ideation</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 1, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="bGxtJTJDJTIwZGVzaWduJTJDJTIwY29sbGFib3JhdGlvbiUyQyUyMGlkZWF0aW9u">llm, design, collaboration, ideation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWF0aA==">math <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmVyZg==">nerf <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmxw">nlp <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGFwZXIlMjByZXZpZXc=">paper review <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dHJhaW5pbmc=">training <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dmlzaW9u">vision <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>Test</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bGxtJTJDJTIwZGVzaWduJTJDJTIwY29sbGFib3JhdGlvbiUyQyUyMGlkZWF0aW9u" data-listing-date-sort="1780264800000" data-listing-file-modified-sort="1768219769899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/llms_for_dialogue_generation/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/llms_for_dialogue_generation/index.html" class="no-external">Dialogues for Data Driven Design</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/llms_for_dialogue_generation/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGxtJTJDJTIwZGVzaWduJTJDJTIwY29sbGFib3JhdGlvbiUyQyUyMGlkZWF0aW9u'); return false;">llm, design, collaboration, ideation</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/llms_for_dialogue_generation/index.html" class="no-external">
-<p>using LLMs to support collaborative design ideation</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/llms_for_dialogue_generation/index.html" class="no-external">
-<div class="listing-date">
-Jun 1, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmxw" data-listing-date-sort="1770073200000" data-listing-file-modified-sort="1770125727511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="151">
-<div class="thumbnail"><a href="./posts/gliner2/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/gliner2/gliner2.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/gliner2/index.html" class="no-external">Best way to do traditional NLP?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/gliner2/index.html" class="no-external">GLiNER2 and it’s example usage</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmxw'); return false;">nlp</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/gliner2/index.html" class="no-external">
-We use LLMs for everything nowadays, from adding numbers, to finding a meaning of life. But no, it is not another post about Large Language Models as they are often not…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/gliner2/index.html" class="no-external">
-<div class="listing-date">
-Feb 3, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="bmVyZg==" data-listing-date-sort="1700607600000" data-listing-file-modified-sort="1767893332377" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96">
-<div class="thumbnail"><a href="./posts/nerf_basics/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/nerf_basics/DALL·E 2023-11-22 20.12.00 - A futuristic Nerf gun designed for the Metaverse. The gun is sleek, with neon lights and digital patterns on its body. It features advanced holographi.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/nerf_basics/index.html" class="no-external">NeRF basics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/nerf_basics/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmVyZg=='); return false;">nerf</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/nerf_basics/index.html" class="no-external">
-<p>companion post for DSS 2023 conference</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/nerf_basics/index.html" class="no-external">
-<div class="listing-date">
-Nov 22, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="cGFwZXIlMjByZXZpZXclMkN2aXNpb24=" data-listing-date-sort="1673737200000" data-listing-file-modified-sort="1767893332381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="545">
-<div class="thumbnail"><a href="./posts/synthetic_vision_training/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/synthetic_vision_training/front.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/synthetic_vision_training/index.html" class="no-external">Training vision models on synthetic images</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/synthetic_vision_training/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGFwZXIlMjByZXZpZXc='); return false;">paper review</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzaW9u'); return false;">vision</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/synthetic_vision_training/index.html" class="no-external">
-<p>Not SOTA performance, but quite good</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/synthetic_vision_training/index.html" class="no-external">
-<div class="listing-date">
-Jan 15, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="dHJhaW5pbmc=" data-listing-date-sort="1673478000000" data-listing-file-modified-sort="1767893332369" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="151">
-<div class="thumbnail"><a href="./posts/f_cross_entropy/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/f_cross_entropy/1163388725_water_trickling_down_the_mountain_photorealistic_4k.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/f_cross_entropy/index.html" class="no-external">Why use F.cross_entropy?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/f_cross_entropy/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJhaW5pbmc='); return false;">training</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/f_cross_entropy/index.html" class="no-external">
-<p>… instead of computing it yourself?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/f_cross_entropy/index.html" class="no-external">
-<div class="listing-date">
-Jan 12, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="dHJhaW5pbmc=" data-listing-date-sort="1671663600000" data-listing-file-modified-sort="1770125494162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="315">
-<div class="thumbnail"><a href="./posts/optuna_notes/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/optuna_notes/optimization.jpeg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/optuna_notes/index.html" class="no-external">Optuna is hot on Kaggle</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/optuna_notes/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJhaW5pbmc='); return false;">training</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/optuna_notes/index.html" class="no-external">
-<p>How to use it with code examples</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/optuna_notes/index.html" class="no-external">
-<div class="listing-date">
-Dec 22, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="cGFwZXIlMjByZXZpZXc=" data-listing-date-sort="1670454000000" data-listing-file-modified-sort="1767893332369" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="148">
-<div class="thumbnail"><a href="./posts/how_to_read_papers/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/how_to_read_papers/3178523366_PhD_student_at_work_in_the_library__in_a_style_of_van_gogh.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/how_to_read_papers/index.html" class="no-external">How to read papers?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/how_to_read_papers/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGFwZXIlMjByZXZpZXc='); return false;">paper review</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/how_to_read_papers/index.html" class="no-external">
-<p>Great advice from Andrew Ng</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/how_to_read_papers/index.html" class="no-external">
-<div class="listing-date">
-Dec 8, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="bWF0aA==" data-listing-date-sort="1669676400000" data-listing-file-modified-sort="1767893332373" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="298">
-<div class="thumbnail"><a href="./posts/math_resources/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/math_resources/a3bb5dac-dce6-4f65-81e7-cf792c209edd.jpeg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/math_resources/index.html" class="no-external">Math resources</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/math_resources/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWF0aA=='); return false;">math</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/math_resources/index.html" class="no-external">
-<p>All you need to within weeks understand Deep Learning and be reasonably comfortable with papers.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/math_resources/index.html" class="no-external">
-<div class="listing-date">
-Nov 29, 2022
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
