@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/llms_for_dialogue_generation/index.html",
       "/posts/gliner2/index.html",
       "/posts/nerf_basics/index.html",
       "/posts/synthetic_vision_training/index.html",

@@ -3,6 +3,7 @@
 .envrc
 .env
 __pycache__
+.ipynb_checkpoints
 **/*.quarto_ipynb
 .vscode
 
