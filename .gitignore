@@ -1,6 +1,8 @@
 .quarto
 .venv
 .envrc
+.env
+__pycache__
 **/*.quarto_ipynb
 .vscode
 
