@@ -7,24 +7,18 @@ about:
     - icon: github
       text: Github
       href: https://github.com/misza222
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/misza222
+    # - icon: twitter
+    #   text: Twitter
+    #   href: https://twitter.com/misza222
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/in/misza/
 
 ---
 
-Husband, father, Christian, programmer, fascinated with NNs and most recently with Computer Vision, specifically NeRFs.
+Husband, father, Christian, programmer, fascinated with NNs and LLMs.
 
-I took a sabbatical to explore machine/deep learning but I am **open to offers** that will lead me into direction of greater enlightement in a field of Deep Learning, CG and applications in Med/Pharma. Can be fully *Remote* or in *Warsaw/Poland*.
-
-I write this blog mostly for:
-
-  - myself to better remember what I learn <sup><sub>(and I have tons of blog posts that I never publish as no time to polish it for other to learn from)</sup></sub>
-  - others to learn from - I often post about stuff that I learn with others <sup><sub>(such as HF RL course topics) - it is easier to convince yourself to write good quality content with that objective in mind :)</sup></sub>
-  - rectuiters/employers - so they can discover what I learn and what I enjoy doing
+I am **open to offers** right now, preferably in in Med/Pharma, ideally in Warsaw, Poland or Remote.
 
 If you are on a learning path like me, I can'trecommend enough  [writing a blog](https://www.fast.ai/posts/2019-05-13-blogging-advice.html).
 
